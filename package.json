@@ -1,0 +1,56 @@
+{
+	"name": "place-window",
+	"description": "Centered the window with different shortcut",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"activationEvents": [
+		"onCommand:placewindow.top",
+		"onCommand:placewindow.center",
+		"onCommand:placewindow.down"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "placewindow.top",
+				"title": "Centered the window such that the current line moved to the top of the window"
+			},
+			{
+				"command": "placewindow.center",
+				"title": "Centered the window such that the current line moved to the center of the window"
+			},
+			{
+				"command": "placewindow.down",
+				"title": "Centered the window such that the current line moved to the bottom of the window"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "placewindow.top",
+				"key": "ctrl+t",
+				"mac": "ctrl+t",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "placewindow.center",
+				"key": "ctrl+g",
+				"mac": "ctrl+g",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "placewindow.down",
+				"key": "ctrl+b",
+				"mac": "ctrl+b",
+				"when": "editorTextFocus"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"vscode": "^1.1.22"
+	}
+}
